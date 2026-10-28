@@ -1,0 +1,89 @@
+# Jarvis – dark glass design (cyan glow borders, orange accents)
+# Requires: card-mod (HACS, loaded via frontend: extra_module_url)
+
+Jarvis:
+  card-mod-theme: Jarvis
+
+  # ---------- Colors ----------
+  jarvis-cyan: '40, 215, 255'
+  jarvis-orange: '255, 138, 43'
+
+  primary-color: 'rgb(255, 138, 43)'
+  accent-color: 'rgb(40, 215, 255)'
+  dark-primary-color: 'rgb(220, 110, 20)'
+  light-primary-color: 'rgb(255, 180, 110)'
+  primary-text-color: '#f2f8ff'
+  secondary-text-color: 'rgba(205, 225, 240, 0.78)'
+  text-primary-color: '#08121c'
+  disabled-text-color: 'rgba(205, 225, 240, 0.4)'
+  divider-color: 'rgba(40, 215, 255, 0.22)'
+  state-icon-color: 'rgb(40, 215, 255)'
+  state-active-color: 'rgb(255, 138, 43)'
+  primary-background-color: '#050d16'
+  secondary-background-color: '#0a1824'
+  card-background-color: '#0a1824'
+  app-header-background-color: 'rgba(5, 13, 22, 0.82)'
+  app-header-text-color: 'rgb(40, 215, 255)'
+  sidebar-background-color: '#07121c'
+  sidebar-text-color: 'rgba(205, 225, 240, 0.8)'
+  sidebar-icon-color: 'rgba(40, 215, 255, 0.8)'
+  sidebar-selected-icon-color: 'rgb(255, 138, 43)'
+  sidebar-selected-text-color: 'rgb(255, 138, 43)'
+  switch-checked-color: 'rgb(255, 138, 43)'
+  slider-color: 'rgb(255, 138, 43)'
+  slider-bar-color: 'rgba(40, 215, 255, 0.25)'
+  scrollbar-thumb-color: 'rgba(40, 215, 255, 0.35)'
+
+  lovelace-background: 'radial-gradient(ellipse at 15% -10%, rgba(40,215,255,0.22), transparent 55%) fixed, radial-gradient(ellipse at 90% 110%, rgba(255,138,43,0.20), transparent 55%) fixed, linear-gradient(160deg, #050d16 0%, #0a1b28 55%, #101820 100%) fixed'
+
+  # ---------- Cards (native) ----------
+  ha-card-background: 'rgba(8, 22, 34, 0.62)'
+  ha-card-border-radius: '14px'
+  ha-card-border-width: '1px'
+  ha-card-border-color: 'rgba(40, 215, 255, 0.55)'
+  ha-card-box-shadow: '0 0 14px rgba(40, 215, 255, 0.22), inset 0 0 18px rgba(40, 215, 255, 0.06)'
+
+  # ---------- Cards (card-mod) ----------
+  card-mod-card: |
+    ha-card {
+      --cy: var(--jarvis-cyan);
+      --or: var(--jarvis-orange);
+      border: 1px solid rgba(var(--cy), 0.55);
+      border-radius: 14px;
+      background: linear-gradient(145deg, rgba(8,22,34,0.66), rgba(10,30,44,0.5));
+      box-shadow: 0 0 14px rgba(var(--cy), 0.22), inset 0 0 18px rgba(var(--cy), 0.06);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      transition: box-shadow 0.25s ease, border-color 0.25s ease;
+    }
+    ha-card:hover {
+      border-color: rgba(var(--cy), 0.9);
+      box-shadow: 0 0 22px rgba(var(--cy), 0.4), inset 0 0 18px rgba(var(--cy), 0.1);
+    }
+    :host(hui-heading-card) ha-card {
+      --primary-text-color: rgb(var(--cy));
+      --secondary-text-color: rgba(var(--cy), 0.75);
+      background: none;
+      box-shadow: none;
+      border: none;
+      border-bottom: 1px solid rgba(var(--cy), 0.4);
+      border-radius: 0;
+      backdrop-filter: none;
+      -webkit-backdrop-filter: none;
+      text-transform: uppercase;
+      letter-spacing: 2.5px;
+      text-shadow: 0 0 10px rgba(var(--cy), 0.55);
+    }
+    ha-card.text-only,
+    :host(.text-only) ha-card {
+      background: none;
+      box-shadow: none;
+      border: none;
+      backdrop-filter: none;
+      -webkit-backdrop-filter: none;
+      text-shadow: 0 0 14px rgba(var(--cy), 0.5);
+    }
+
+  modes:
+    dark:
+      app-theme-color: '#050d16'
